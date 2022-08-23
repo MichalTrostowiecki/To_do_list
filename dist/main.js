@@ -1,0 +1,1 @@
+(()=>{"use strict";!function(){const e=document.querySelector(".main"),t=document.createElement("div");t.classList.add("inbox"),e.appendChild(t)}()})();
