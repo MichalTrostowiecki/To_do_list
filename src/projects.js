@@ -1,5 +1,4 @@
-function displayProjects() {
-  const mainDiv = document.querySelector("main");
+function displayProjects(mainDiv) {
   const projectsDiv = document.createElement("div");
   projectsDiv.classList.add("projects-container");
 

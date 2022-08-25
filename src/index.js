@@ -1,5 +1,3 @@
-import displayInbox from "./inbox";
-import displayProjects from "./projects";
+import loadPage from "./website";
 
-displayInbox();
-displayProjects();
+loadPage();

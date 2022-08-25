@@ -1,5 +1,4 @@
-function displayInbox() {
-  const mainDiv = document.querySelector(".main");
+function displayInbox(mainDiv) {
   const inbox = document.createElement("div");
   inbox.classList.add("inbox-container");
 
