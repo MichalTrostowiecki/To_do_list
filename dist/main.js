@@ -1,1 +1,1 @@
-(()=>{"use strict";!function(){const e=document.querySelector(".main"),t=document.createElement("div");t.classList.add("inbox"),e.appendChild(t)}()})();
+(()=>{"use strict";(function(){const e=document.querySelector(".main"),n=document.createElement("div");n.classList.add("inbox-container"),e.appendChild(n)})(),function(){const e=document.querySelector("main"),n=document.createElement("div");n.classList.add("projects-container"),e.appendChild(n)}()})();

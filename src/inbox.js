@@ -1,7 +1,7 @@
 function displayInbox() {
   const mainDiv = document.querySelector(".main");
   const inbox = document.createElement("div");
-  inbox.classList.add("inbox");
+  inbox.classList.add("inbox-container");
 
   mainDiv.appendChild(inbox);
 
