@@ -7,6 +7,7 @@ function loadPage() {
   displayInbox(mainDiv);
   displayProjects(mainDiv);
   addButton(mainDiv);
+  popUpForm(mainDiv);
 }
 
 function addButton(mainDiv) {
@@ -15,24 +16,25 @@ function addButton(mainDiv) {
   addButton.classList.add("addButton");
   mainDiv.appendChild(addButton);
 
-  addButton.addEventListener("click", newThing(mainDiv));
+  addButton.addEventListener("click", openForm);
 }
 
-function newThing(mainDiv) {
-  const inputDiv = document.createElement("div");
-  inputDiv.classList.add("inputDiv");
+// In this function I will want to create a form with inputs, then read value put by user
+// into input and convert it into a new object using a class or fuctory function
+function popUpForm(mainDiv) {
+  const popUpForm = document.createElement("div");
+  popUpForm.classList.add("popUpForm");
 
-  const input = document.createElement("input");
-  input.classList.add("tittle");
-
-  mainDiv.appendChild(inputDiv);
-  mainDiv.appendChild(input);
-
-  const userInput = document.createElement("p");
-  userInput.textContent = input.value;
-  mainDiv.appendChild(userInput);
+  mainDiv.appendChild(popUpForm);
 }
 
-function addForm() {}
+//These two functions will open and close forms to add new ToDo thing
+function openForm() {
+  document.querySelector("popUpForm").style.display = "block";
+}
+
+function closeForm() {
+  document.querySelector("popUpForm").style.display = "none";
+}
 
 export default loadPage;
