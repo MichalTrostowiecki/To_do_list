@@ -37,11 +37,19 @@ function popUpForm(mainDiv) {
   const enterBtn = document.createElement("button");
   enterBtn.classList.add("enterBtn");
   enterBtn.textContent = "Add";
+  enterBtn.type = "button";
+  enterBtn.addEventListener("click", () => {
+    toDoThingCreation(tittle);
+  });
 
   mainDiv.appendChild(popUpForm);
   popUpForm.appendChild(form);
   form.appendChild(tittle);
   form.appendChild(enterBtn);
+}
+// this function will create new object data from user input
+function toDoThingCreation(tittle) {
+  console.log(tittle.value);
 }
 
 //These two functions will open and close forms to add new ToDo thing
