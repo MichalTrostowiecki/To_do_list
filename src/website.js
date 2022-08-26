@@ -25,7 +25,23 @@ function popUpForm(mainDiv) {
   const popUpForm = document.createElement("div");
   popUpForm.classList.add("popUpForm");
 
+  const form = document.createElement("form");
+  form.classList.add("form");
+  form.id = "form";
+
+  const tittle = document.createElement("input");
+  tittle.classList.add("tittle");
+  tittle.type = "text";
+  tittle.placeholder = "Thing to do";
+
+  const enterBtn = document.createElement("button");
+  enterBtn.classList.add("enterBtn");
+  enterBtn.textContent = "Add";
+
   mainDiv.appendChild(popUpForm);
+  popUpForm.appendChild(form);
+  form.appendChild(tittle);
+  form.appendChild(enterBtn);
 }
 
 //These two functions will open and close forms to add new ToDo thing
