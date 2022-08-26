@@ -1,6 +1,7 @@
 import displayInbox from "./inbox";
 import displayProjects from "./projects";
 
+// this functions creates HMTL for my website
 function loadPage() {
   const mainDiv = document.querySelector("main");
 
@@ -47,9 +48,18 @@ function popUpForm(mainDiv) {
   form.appendChild(tittle);
   form.appendChild(enterBtn);
 }
+
 // this function will create new object data from user input
 function toDoThingCreation(tittle) {
-  console.log(tittle.value);
+  const item = new ToDoThing(tittle.value);
+  console.log(item);
+}
+
+// This is Class for new TodoThing. I will have to place it in the right place maybe in the inbox
+class ToDoThing {
+  constructor(tittle) {
+    this.title = tittle;
+  }
 }
 
 //These two functions will open and close forms to add new ToDo thing
