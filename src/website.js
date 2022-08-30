@@ -35,30 +35,37 @@ function popUpForm(mainDiv) {
   tittle.type = "text";
   tittle.placeholder = "Thing to do";
 
+  const dueDate = document.createElement("input");
+  dueDate.classList = "dueDate";
+  dueDate.type = "date";
+  dueDate.min = "2020-01-01";
+
   const enterBtn = document.createElement("button");
   enterBtn.classList.add("enterBtn");
   enterBtn.textContent = "Add";
   enterBtn.type = "button";
   enterBtn.addEventListener("click", () => {
-    toDoThingCreation(tittle);
+    toDoThingCreation(tittle, dueDate);
   });
 
   mainDiv.appendChild(popUpForm);
   popUpForm.appendChild(form);
   form.appendChild(tittle);
   form.appendChild(enterBtn);
+  form.appendChild(dueDate);
 }
 
 // this function will create new object data from user input
-function toDoThingCreation(tittle) {
-  const item = new ToDoThing(tittle.value);
+function toDoThingCreation(tittle, dueDate) {
+  const item = new ToDoThing(tittle.value, dueDate.value);
   console.log(item);
 }
 
 // This is Class for new TodoThing. I will have to place it in the right place maybe in the inbox
 class ToDoThing {
-  constructor(tittle) {
+  constructor(tittle, dueDate) {
     this.title = tittle;
+    this.dueDate = dueDate;
   }
 }
 
