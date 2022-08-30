@@ -36,16 +36,21 @@ function popUpForm(mainDiv) {
   tittle.placeholder = "Thing to do";
 
   const dueDate = document.createElement("input");
-  dueDate.classList = "dueDate";
+  dueDate.classList.add("dueDate");
   dueDate.type = "date";
   dueDate.min = "2020-01-01";
+
+  const description = document.createElement("textarea");
+  description.classList.add("description");
+  description.rows = "5";
+  description.cols = "40";
 
   const enterBtn = document.createElement("button");
   enterBtn.classList.add("enterBtn");
   enterBtn.textContent = "Add";
   enterBtn.type = "button";
   enterBtn.addEventListener("click", () => {
-    toDoThingCreation(tittle, dueDate);
+    toDoThingCreation(tittle, dueDate, description);
   });
 
   mainDiv.appendChild(popUpForm);
@@ -53,19 +58,22 @@ function popUpForm(mainDiv) {
   form.appendChild(tittle);
   form.appendChild(enterBtn);
   form.appendChild(dueDate);
+  form.appendChild(description);
 }
 
 // this function will create new object data from user input
-function toDoThingCreation(tittle, dueDate) {
-  const item = new ToDoThing(tittle.value, dueDate.value);
+function toDoThingCreation(tittle, dueDate, description) {
+  const item = new ToDoThing(tittle.value, dueDate.value, description.value);
+
   console.log(item);
 }
 
 // This is Class for new TodoThing. I will have to place it in the right place maybe in the inbox
 class ToDoThing {
-  constructor(tittle, dueDate) {
+  constructor(tittle, dueDate, description) {
     this.title = tittle;
     this.dueDate = dueDate;
+    this.description = description;
   }
 }
 
