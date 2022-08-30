@@ -63,9 +63,21 @@ function popUpForm(mainDiv) {
 
 // this function will create new object data from user input
 function toDoThingCreation(tittle, dueDate, description) {
+  const mainDiv = document.querySelector(".main");
   const item = new ToDoThing(tittle.value, dueDate.value, description.value);
 
-  console.log(item);
+  const toDoTittle = document.createElement("p");
+  toDoTittle.textContent = item.title;
+
+  const toDoDueDate = document.createElement("p");
+  toDoDueDate.textContent = item.dueDate;
+
+  const toDoDescription = document.createElement("p");
+  toDoDescription.textContent = item.description;
+
+  mainDiv.appendChild(toDoTittle);
+  mainDiv.appendChild(toDoDueDate);
+  mainDiv.appendChild(toDoDescription);
 }
 
 // This is Class for new TodoThing. I will have to place it in the right place maybe in the inbox
