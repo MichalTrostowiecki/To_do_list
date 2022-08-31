@@ -63,6 +63,8 @@ function popUpForm(mainDiv) {
 
 // this function will create new object data from user input
 function toDoThingCreation(tittle, dueDate, description) {
+  const storedThings = [];
+
   const mainDiv = document.querySelector(".main");
   const item = new ToDoThing(tittle.value, dueDate.value, description.value);
 
