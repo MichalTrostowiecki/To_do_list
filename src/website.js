@@ -1,6 +1,7 @@
 import displayInbox from "./inbox";
 import displayProjects from "./projects";
 
+const library = [];
 // this functions creates HMTL for my website
 function loadPage() {
   const mainDiv = document.querySelector("main");
@@ -66,8 +67,9 @@ function toDoThingCreation(tittle, dueDate, description) {
   const mainDiv = document.querySelector(".main");
   const toDoDiv = document.createElement("div");
   toDoDiv.classList.add("toDoDiv");
-  const item = new ToDoThing(tittle.value, dueDate.value, description.value);
 
+  const item = new ToDoThing(tittle.value, dueDate.value, description.value);
+  library.push(item);
   const toDoTittle = document.createElement("p");
   toDoTittle.textContent = item.title;
 
@@ -80,6 +82,8 @@ function toDoThingCreation(tittle, dueDate, description) {
   toDoDiv.appendChild(toDoTittle);
   toDoDiv.appendChild(toDoDueDate);
   toDoDiv.appendChild(toDoDescription);
+
+  console.log(library);
 }
 
 // This is Class for new TodoThing. I will have to place it in the right place maybe in the inbox
